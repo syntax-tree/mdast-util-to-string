@@ -1,0 +1,19 @@
+{
+  "name": "mdast-util-to-string",
+  "version": "0.0.0",
+  "description": "Utility to get the plain text content of a node",
+  "license": "MIT",
+  "keywords": [
+    "mdast",
+    "markdown",
+    "node",
+    "to",
+    "string",
+    "util",
+    "utility"
+  ],
+  "repository": "wooorm/mdast-util-to-string",
+  "scripts": [
+    "index.js"
+  ]
+}

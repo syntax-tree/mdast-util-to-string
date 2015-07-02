@@ -1,0 +1,36 @@
+{
+  "name": "mdast-util-to-string",
+  "main": "mdast-util-to-string.js",
+  "description": "Utility to get the plain text content of a node",
+  "license": "MIT",
+  "keywords": [
+    "mdast",
+    "markdown",
+    "node",
+    "to",
+    "string",
+    "util",
+    "utility"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wooorm/mdast-util-to-string.git"
+  },
+  "authors": [
+    "Titus Wormer <tituswormer@gmail.com>"
+  ],
+  "ignore": [
+    ".*",
+    "*.log",
+    "*.md",
+    "build/",
+    "components/",
+    "coverage/",
+    "node_modules/",
+    "build.js",
+    "index.js",
+    "test.js",
+    "component.json",
+    "package.json"
+  ]
+}
