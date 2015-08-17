@@ -2,7 +2,7 @@
 /**
  * @author Titus Wormer
  * @copyright 2015 Titus Wormer. All rights reserved.
- * @module mdast-util-to-string
+ * @module mdast:util:to-string
  * @fileoverview Utility to get the text value of a node.
  */
 

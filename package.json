@@ -12,29 +12,24 @@
     "util",
     "utility"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/wooorm/mdast-util-to-string.git"
-  },
-  "author": {
-    "name": "Titus Wormer",
-    "email": "tituswormer@gmail.com"
-  },
+  "repository": "wooorm/mdast-util-to-string",
+  "author": "Titus Wormer <tituswormer@gmail.com>",
   "files": [
-    "index.js",
-    "LICENSE"
+    "index.js"
   ],
   "devDependencies": {
-    "browserify": "^10.0.0",
-    "eslint": "^0.24.0",
+    "browserify": "^11.0.0",
+    "eslint": "^1.0.0",
     "esmangle": "^1.0.0",
     "istanbul": "^0.3.0",
-    "jscs": "^1.0.0",
+    "jscs": "^2.0.0",
     "jscs-jsdoc": "^1.0.0",
-    "mdast": "^0.26.0",
+    "mdast": "^1.0.0",
+    "mdast-comment-config": "^1.0.0",
     "mdast-github": "^0.3.0",
     "mdast-lint": "^0.4.0",
-    "mdast-yaml-config": "^0.2.0",
+    "mdast-slug": "^0.1.1",
+    "mdast-validate-links": "^0.3.1",
     "mocha": "^2.0.0"
   },
   "scripts": {
