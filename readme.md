@@ -1,4 +1,4 @@
-# mdast-util-to-string [![Build Status](https://img.shields.io/travis/wooorm/mdast-util-to-string.svg?style=flat)](https://travis-ci.org/wooorm/mdast-util-to-string) [![Coverage Status](https://img.shields.io/coveralls/wooorm/mdast-util-to-string.svg?style=flat)](https://coveralls.io/r/wooorm/mdast-util-to-string?branch=master)
+# mdast-util-to-string [![Build Status](https://img.shields.io/travis/wooorm/mdast-mdast-util-to-string.svg)](https://travis-ci.org/wooorm/mdast-mdast-util-to-string) [![Coverage Status](https://img.shields.io/codecov/c/github/wooorm/mdast-mdast-util-to-string.svg)](https://codecov.io/github/wooorm/mdast-mdast-util-to-string)
 
 [**mdast**](https://github.com/wooorm/mdast) utility to get the plain text
 content of a node.
