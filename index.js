@@ -1,11 +1,14 @@
 /**
  * @author Titus Wormer
- * @copyright 2015 Titus Wormer. All rights reserved.
+ * @copyright 2015 Titus Wormer
+ * @license MIT
  * @module mdast:util:to-string
- * @fileoverview Utility to get the text value of a node.
+ * @fileoverview Utility to get the plain text content of a node.
  */
 
 'use strict';
+
+/* eslint-env node */
 
 /**
  * Get the value of `node`.  Checks, `value`,

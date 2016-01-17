@@ -1,3 +1,11 @@
+/**
+ * @author Titus Wormer
+ * @copyright 2015 Titus Wormer
+ * @license MIT
+ * @module mdast:util:to-string
+ * @fileoverview Test suite for `mdast-util-to-string`.
+ */
+
 'use strict';
 
 /* eslint-env node */
