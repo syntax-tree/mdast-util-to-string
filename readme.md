@@ -14,8 +14,8 @@ npm install mdast-util-to-string
 **mdast-util-to-string** is also available for [bower](http://bower.io/#install-packages),
 [component](https://github.com/componentjs/component), and
 [duo](http://duojs.org/#getting-started), and as an AMD, CommonJS, and globals
-module, [uncompressed](mdast-util-to-string.js) and
-[compressed](mdast-util-to-string.min.js).
+module, [uncompressed and
+compressed](https://github.com/wooorm/mdast-util-to-string/releases).
 
 ## Usage
 
