@@ -1,76 +1,86 @@
 'use strict';
 
-/* eslint-env mocha */
+/* eslint-env node */
 
 /*
  * Dependencies.
  */
 
-var assert = require('assert');
+var test = require('tape');
 var toString = require('./index.js');
-
-/*
- * Methods.
- */
-
-var equal = assert.strictEqual;
-var throws = assert.throws;
 
 /*
  * Tests.
  */
 
-describe('mdast-util-visit', function () {
-    it('should fail without node', function () {
-        throws(function () {
+test('mdast-util-to-string', function (t) {
+    t.throws(
+        function () {
             toString();
-        });
-    });
+        },
+        'should fail without node'
+    );
 
-    it('should not fail on unrecognised nodes', function () {
-        equal('foo', toString({
-            'value': 'foo'
-        }));
-    });
+    t.equal('foo', toString({
+        'value': 'foo'
+    }, 'should not fail on unrecognised nodes'));
 
-    it('should prefer `value`', function () {
-        equal('foo', toString({
-            'value': 'foo',
-            'alt': 'bar',
-            'title': 'baz'
-        }));
-    });
+    t.equal('foo', toString({
+        'value': 'foo',
+        'children': [
+            {
+                'value': 'foo'
+            },
+            {
+                'alt': 'bar'
+            },
+            {
+                'title': 'baz'
+            }
+        ]
+    }), 'should prefer `value` over all others');
 
-    it('should then prefer `alt`', function () {
-        equal('bar', toString({
-            'alt': 'bar',
-            'title': 'baz'
-        }));
-    });
+    t.equal('foo', toString({
+        'value': 'foo',
+        'alt': 'bar',
+        'title': 'baz'
+    }), 'should prefer `value` over `alt` or `title`');
 
-    it('should then prefer `title`', function () {
-        equal('baz', toString({
-            'title': 'baz'
-        }));
-    });
+    t.equal('bar', toString({
+        'alt': 'bar',
+        'title': 'baz'
+    }), 'should prefer `alt` over `title`');
 
-    it('should then prefer `children`', function () {
-        equal('foobarbaz', toString({
-            'children': [
-                {
-                    'value': 'foo'
-                },
-                {
-                    'alt': 'bar'
-                },
-                {
-                    'title': 'baz'
-                }
-            ]
-        }));
-    });
+    t.equal('baz', toString({
+        'title': 'baz',
+        'children': [
+            {
+                'value': 'foo'
+            },
+            {
+                'alt': 'bar'
+            },
+            {
+                'title': 'baz'
+            }
+        ]
+    }), 'should use `title` over `children`');
 
-    it('should fall back on an empty string', function () {
-        equal('', toString({}));
-    });
+    t.equal('foobarbaz', toString({
+        'children': [
+            {
+                'value': 'foo'
+            },
+            {
+                'alt': 'bar'
+            },
+            {
+                'title': 'baz'
+            }
+        ]
+    }), 'should prefer `children`');
+
+    t.equal('', toString({}), 'should fall back on an empty string');
+
+    t.end();
 });
