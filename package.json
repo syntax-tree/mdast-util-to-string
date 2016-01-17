@@ -24,12 +24,12 @@
     "istanbul": "^0.3.0",
     "jscs": "^2.0.0",
     "jscs-jsdoc": "^1.0.0",
-    "mdast": "^1.0.0",
-    "mdast-comment-config": "^1.0.0",
-    "mdast-github": "^0.3.0",
-    "mdast-lint": "^0.4.0",
-    "mdast-slug": "^0.1.1",
-    "mdast-validate-links": "^0.3.1",
+    "remark": "^3.0.0",
+    "remark-comment-config": "^2.0.0",
+    "remark-github": "^3.0.0",
+    "remark-lint": "^2.0.0",
+    "remark-slug": "^3.0.0",
+    "remark-validate-links": "^2.0.0",
     "mocha": "^2.0.0"
   },
   "scripts": {
@@ -43,7 +43,7 @@
     "make": "npm run lint && npm run test-coverage",
     "bundle": "browserify index.js --no-builtins -s mdastUtilToString > mdast-util-to-string.js",
     "postbundle": "esmangle mdast-util-to-string.js > mdast-util-to-string.min.js",
-    "build-md": "mdast . --output --quiet",
+    "build-md": "remark . --quiet --frail",
     "build": "npm run bundle && npm run build-md"
   }
 }

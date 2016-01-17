@@ -1,7 +1,7 @@
 # mdast-util-to-string [![Build Status](https://img.shields.io/travis/wooorm/mdast-mdast-util-to-string.svg)](https://travis-ci.org/wooorm/mdast-mdast-util-to-string) [![Coverage Status](https://img.shields.io/codecov/c/github/wooorm/mdast-mdast-util-to-string.svg)](https://codecov.io/github/wooorm/mdast-mdast-util-to-string)
 
-[**mdast**](https://github.com/wooorm/mdast) utility to get the plain text
-content of a node.
+[**remark**](https://github.com/wooorm/remark) utility to get the plain text
+content of an [**mdast**](https://github.com/wooorm/mdast) node.
 
 ## Installation
 
@@ -24,14 +24,14 @@ module, [uncompressed](mdast-util-to-string.js) and
  * Dependencies.
  */
 
-var mdast = require('mdast');
+var remark = require('remark');
 var toString = require('mdast-util-to-string');
 
 /*
  * AST.
  */
 
-var ast = mdast.parse('Some *emphasis*, **strongness**, and `code`.');
+var ast = remark.parse('Some *emphasis*, **strongness**, and `code`.');
 
 toString(ast);
 // 'Some emphasis, strongness, and code.'
@@ -52,7 +52,7 @@ the children of `node` and joins them (without spaces or newlines).
 
 Parameters:
 
-*   `node` (`Node`) — [**mdast** node](https://github.com/wooorm/mdast/blob/master/doc/nodes.md);
+*   `node` (`Node`) — [**mdast** node](https://github.com/wooorm/mdast#node);
 
 Returns: `string` — text representation of `node`.
 
