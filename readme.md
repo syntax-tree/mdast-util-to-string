@@ -1,36 +1,38 @@
-# mdast-util-to-string [![Build Status][travis-badge]][travis] [![Coverage Status][coverage-badge]][coverage]
+# mdast-util-to-string [![Build Status][build-badge]][build-status] [![Coverage Status][coverage-badge]][coverage-status] [![Chat][chat-badge]][chat]
 
-[**remark**][remark] utility to get the plain text
-content of an [**mdast**][mdast] node.
+<!--lint disable list-item-spacing heading-increment list-item-indent-->
+
+Get the plain text content of an [MDAST][] node.
 
 ## Installation
 
-[npm][npm-install]:
+[npm][]:
 
 ```bash
 npm install mdast-util-to-string
 ```
 
-**mdast-util-to-string** is also available for [duo][],
-and as an AMD, CommonJS, and globals module,
-[uncompressed and compressed][releases].
+**mdast-util-to-string** is also available as an AMD, CommonJS, and
+globals module, [uncompressed and compressed][releases].
 
 ## Usage
 
-```js
-/*
- * Dependencies.
- */
+Dependencies:
 
+```js
 var remark = require('remark');
 var toString = require('mdast-util-to-string');
+```
 
-/*
- * AST.
- */
+Parse:
 
-var ast = remark.parse('Some *emphasis*, **strongness**, and `code`.');
+```js
+var ast = remark().parse('Some *emphasis*, **strongness**, and `code`.');
+```
 
+Stringify:
+
+```js
 toString(ast);
 // 'Some emphasis, strongness, and code.'
 ```
@@ -46,40 +48,44 @@ If no value is found, the algorithm checks the children of `node` and
 joins them (without spaces or newlines).
 
 > This is not a markdown to plain-text library.
-> Use [strip-markdown](https://github.com/wooorm/strip-markdown) for that.
+> Use [`strip-markdown`][strip-markdown] for that.
 
-**Parameters**:
+###### Parameters
 
-*   `node` ([`Node`][mdast-node]).
+*   `node` ([`Node`][node]) — Node to stringify
 
-**Returns**: `string` — text representation of `node`.
+###### Returns
+
+`string` — text representation of `node`.
 
 ## License
 
-[MIT][license] © [Titus Wormer][home]
+[MIT][license] © [Titus Wormer][author]
 
 <!-- Definitions -->
 
-[travis-badge]: https://img.shields.io/travis/wooorm/mdast-util-to-string.svg
+[build-badge]: https://img.shields.io/travis/wooorm/mdast-util-to-string.svg
 
-[travis]: https://travis-ci.org/wooorm/mdast-util-to-string
+[build-status]: https://travis-ci.org/wooorm/mdast-util-to-string
 
 [coverage-badge]: https://img.shields.io/codecov/c/github/wooorm/mdast-util-to-string.svg
 
-[coverage]: https://codecov.io/github/wooorm/mdast-util-to-string
+[coverage-status]: https://codecov.io/github/wooorm/mdast-util-to-string
 
-[remark]: https://github.com/wooorm/remark
+[chat-badge]: https://img.shields.io/gitter/room/wooorm/remark.svg
 
-[mdast]: https://github.com/wooorm/mdast
-
-[mdast-node]: https://github.com/wooorm/mdast#node
-
-[npm-install]: https://docs.npmjs.com/cli/install
-
-[duo]: http://duojs.org/#getting-started
+[chat]: https://gitter.im/wooorm/remark
 
 [releases]: https://github.com/wooorm/mdast-util-to-string/releases
 
 [license]: LICENSE
 
-[home]: http://wooorm.com
+[author]: http://wooorm.com
+
+[npm]: https://docs.npmjs.com/cli/install
+
+[mdast]: https://github.com/wooorm/mdast
+
+[node]: https://github.com/wooorm/mdast#node
+
+[strip-markdown]: https://github.com/wooorm/strip-markdown
