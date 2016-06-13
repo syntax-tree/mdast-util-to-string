@@ -18,23 +18,26 @@
   },
   "bugs": "https://github.com/wooorm/mdast-util-to-string/issues",
   "author": "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)"
+  ],
   "files": [
     "index.js"
   ],
   "dependencies": {},
   "devDependencies": {
     "browserify": "^13.0.0",
-    "eslint": "^1.0.0",
+    "eslint": "^2.0.0",
     "esmangle": "^1.0.0",
     "istanbul": "^0.4.0",
-    "jscs": "^2.0.0",
-    "jscs-jsdoc": "^1.0.0",
-    "remark": "^3.0.0",
-    "remark-comment-config": "^2.0.0",
-    "remark-github": "^3.0.0",
-    "remark-lint": "^2.0.0",
-    "remark-slug": "^3.0.0",
-    "remark-validate-links": "^2.0.0",
+    "jscs": "^3.0.0",
+    "jscs-jsdoc": "^2.0.0",
+    "remark-cli": "^1.0.0",
+    "remark-comment-config": "^4.0.0",
+    "remark-github": "^5.0.0",
+    "remark-lint": "^4.0.0",
+    "remark-slug": "^4.0.0",
+    "remark-validate-links": "^4.0.0",
     "tape": "^4.4.0"
   },
   "scripts": {
