@@ -1,4 +1,3 @@
-components/
 coverage/
 mdast-util-to-string.js
 mdast-util-to-string.min.js
