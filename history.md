@@ -2,6 +2,13 @@
 
 <!--lint disable no-multiple-toplevel-headings-->
 
+1.0.2 / 2016-06-13
+==================
+
+*   Remove support for Duo ([`adc2843`](https://github.com/wooorm/mdast-util-to-string/commit/adc2843))
+*   Update `readme.md` ([`a884615`](https://github.com/wooorm/mdast-util-to-string/commit/a884615))
+*   Update dev-dependencies ([`895912e`](https://github.com/wooorm/mdast-util-to-string/commit/895912e))
+
 1.0.1 / 2016-01-17
 ==================
 
