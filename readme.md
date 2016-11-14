@@ -17,24 +17,13 @@ globals module, [uncompressed and compressed][releases].
 
 ## Usage
 
-Dependencies:
-
 ```js
 var remark = require('remark');
 var toString = require('mdast-util-to-string');
-```
 
-Parse:
+var tree = remark().parse('Some *emphasis*, **importance**, and `code`.');
 
-```js
-var ast = remark().parse('Some *emphasis*, **strongness**, and `code`.');
-```
-
-Stringify:
-
-```js
-toString(ast);
-// 'Some emphasis, strongness, and code.'
+console.log(toString(tree)); //=> 'Some emphasis, importance, and code.'
 ```
 
 ## API

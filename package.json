@@ -27,29 +27,31 @@
   "dependencies": {},
   "devDependencies": {
     "browserify": "^13.0.0",
-    "eslint": "^2.0.0",
     "esmangle": "^1.0.0",
     "istanbul": "^0.4.0",
-    "jscs": "^3.0.0",
-    "jscs-jsdoc": "^2.0.0",
     "remark-cli": "^1.0.0",
     "remark-comment-config": "^4.0.0",
     "remark-github": "^5.0.0",
     "remark-lint": "^4.0.0",
     "remark-slug": "^4.0.0",
     "remark-validate-links": "^4.0.0",
-    "tape": "^4.4.0"
+    "tape": "^4.4.0",
+    "xo": "^0.17.1"
   },
   "scripts": {
     "build-md": "remark . --quiet --frail",
     "build-bundle": "browserify index.js --no-builtins -s mdastUtilToString > mdast-util-to-string.js",
     "build-mangle": "esmangle mdast-util-to-string.js > mdast-util-to-string.min.js",
     "build": "npm run build-md && npm run build-bundle && npm run build-mangle",
-    "lint-api": "eslint .",
-    "lint-style": "jscs --reporter inline .",
-    "lint": "npm run lint-api && npm run lint-style",
+    "lint": "xo",
     "test-api": "node test.js",
     "test-coverage": "istanbul cover test.js",
     "test": "npm run build && npm run lint && npm run test-coverage"
+  },
+  "xo": {
+    "space": true,
+    "ignore": [
+      "mdast-util-to-string.js"
+    ]
   }
 }
