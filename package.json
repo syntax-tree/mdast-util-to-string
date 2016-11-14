@@ -12,10 +12,7 @@
     "util",
     "utility"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/wooorm/mdast-util-to-string.git"
-  },
+  "repository": "https://github.com/wooorm/mdast-util-to-string",
   "bugs": "https://github.com/wooorm/mdast-util-to-string/issues",
   "author": "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)",
   "contributors": [
@@ -29,17 +26,13 @@
     "browserify": "^13.0.0",
     "esmangle": "^1.0.0",
     "nyc": "^8.4.0",
-    "remark-cli": "^1.0.0",
-    "remark-comment-config": "^4.0.0",
-    "remark-github": "^5.0.0",
-    "remark-lint": "^4.0.0",
-    "remark-slug": "^4.0.0",
-    "remark-validate-links": "^4.0.0",
+    "remark-cli": "^2.1.0",
+    "remark-preset-wooorm": "^1.0.0",
     "tape": "^4.4.0",
     "xo": "^0.17.1"
   },
   "scripts": {
-    "build-md": "remark . --quiet --frail",
+    "build-md": "remark . --quiet --frail --output",
     "build-bundle": "browserify index.js --no-builtins -s mdastUtilToString > mdast-util-to-string.js",
     "build-mangle": "esmangle mdast-util-to-string.js > mdast-util-to-string.min.js",
     "build": "npm run build-md && npm run build-bundle && npm run build-mangle",
@@ -59,5 +52,8 @@
     "lines": 100,
     "functions": 100,
     "branches": 100
+  },
+  "remarkConfig": {
+    "presets": "wooorm"
   }
 }
