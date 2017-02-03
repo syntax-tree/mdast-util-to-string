@@ -40,13 +40,13 @@ joins them (without spaces or newlines).
 
 <!-- Definitions -->
 
-[build-badge]: https://img.shields.io/travis/wooorm/mdast-util-to-string.svg
+[build-badge]: https://img.shields.io/travis/syntax-tree/mdast-util-to-string.svg
 
-[build-status]: https://travis-ci.org/wooorm/mdast-util-to-string
+[build-status]: https://travis-ci.org/syntax-tree/mdast-util-to-string
 
-[coverage-badge]: https://img.shields.io/codecov/c/github/wooorm/mdast-util-to-string.svg
+[coverage-badge]: https://img.shields.io/codecov/c/github/syntax-tree/mdast-util-to-string.svg
 
-[coverage-status]: https://codecov.io/github/wooorm/mdast-util-to-string
+[coverage-status]: https://codecov.io/github/syntax-tree/mdast-util-to-string
 
 [chat-badge]: https://img.shields.io/gitter/room/wooorm/remark.svg
 
@@ -58,6 +58,6 @@ joins them (without spaces or newlines).
 
 [npm]: https://docs.npmjs.com/cli/install
 
-[mdast]: https://github.com/wooorm/mdast
+[mdast]: https://github.com/syntax-tree/mdast
 
 [strip-markdown]: https://github.com/wooorm/strip-markdown
