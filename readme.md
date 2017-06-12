@@ -34,6 +34,15 @@ joins them (without spaces or newlines).
 > This is not a markdown to plain-text library.
 > Use [`strip-markdown`][strip-markdown] for that.
 
+## Related
+
+*   [`nlcst-to-string`](https://github.com/syntax-tree/nlcst-to-string)
+    — Get text content in NLCST
+*   [`hast-util-to-string`](https://github.com/wooorm/rehype-minify/tree/master/packages/hast-util-to-string)
+    — Get text content in HAST
+*   [`hast-util-from-string`](https://github.com/wooorm/rehype-minify/tree/master/packages/hast-util-from-string)
+    — Set text content in HAST
+
 ## License
 
 [MIT][license] © [Titus Wormer][author]
