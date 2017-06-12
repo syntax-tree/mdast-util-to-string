@@ -16,7 +16,7 @@ npm install mdast-util-to-string
 var remark = require('remark');
 var toString = require('mdast-util-to-string');
 
-var tree = remark().parse('Some *emphasis*, **importance**, and `code`.');
+var tree = remark().parse('Some _emphasis_, **importance**, and `code`.');
 
 console.log(toString(tree)); //=> 'Some emphasis, importance, and code.'
 ```
