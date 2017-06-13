@@ -13,10 +13,13 @@ npm install mdast-util-to-string
 ## Usage
 
 ```js
-var remark = require('remark');
+var unified = require('unified');
+var parse = require('remark-parse');
 var toString = require('mdast-util-to-string');
 
-var tree = remark().parse('Some _emphasis_, **importance**, and `code`.');
+var tree = unified()
+  .use(parse)
+  .parse('Some _emphasis_, **importance**, and `code`.');
 
 console.log(toString(tree)); //=> 'Some emphasis, importance, and code.'
 ```
