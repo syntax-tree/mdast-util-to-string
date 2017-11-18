@@ -46,6 +46,14 @@ joins them (without spaces or newlines).
 *   [`hast-util-from-string`](https://github.com/wooorm/rehype-minify/tree/master/packages/hast-util-from-string)
     — Set text content in HAST
 
+## Contribute
+
+See [`contribute.md` in `syntax-tree/mdast`][contribute] for ways to get
+started.
+
+This organisation has a [Code of Conduct][coc].  By interacting with this
+repository, organisation, or community you agree to abide by its terms.
+
 ## License
 
 [MIT][license] © [Titus Wormer][author]
@@ -73,3 +81,7 @@ joins them (without spaces or newlines).
 [mdast]: https://github.com/syntax-tree/mdast
 
 [strip-markdown]: https://github.com/wooorm/strip-markdown
+
+[contribute]: https://github.com/syntax-tree/mdast/blob/master/contributing.md
+
+[coc]: https://github.com/syntax-tree/mdast/blob/master/code-of-conduct.md
