@@ -12,7 +12,7 @@
     "util",
     "utility"
   ],
-  "repository": "https://github.com/syntax-tree/mdast-util-to-string",
+  "repository": "syntax-tree/mdast-util-to-string",
   "bugs": "https://github.com/syntax-tree/mdast-util-to-string/issues",
   "author": "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)",
   "contributors": [
