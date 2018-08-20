@@ -1,7 +1,7 @@
 'use strict';
 
 var test = require('tape');
-var toString = require('./index.js');
+var toString = require('.');
 
 test('mdast-util-to-string', function (t) {
   t.throws(
