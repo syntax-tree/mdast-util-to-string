@@ -5,3 +5,4 @@ coverage/
 node_modules/
 mdast-util-to-string.js
 mdast-util-to-string.min.js
+yarn.lock
