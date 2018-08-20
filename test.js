@@ -1,21 +1,18 @@
-'use strict';
+'use strict'
 
-var test = require('tape');
-var toString = require('.');
+var test = require('tape')
+var toString = require('.')
 
-test('mdast-util-to-string', function (t) {
-  t.throws(
-    function () {
-      toString();
-    },
-    'should fail without node'
-  );
+test('mdast-util-to-string', function(t) {
+  t.throws(function() {
+    toString()
+  }, 'should fail without node')
 
   t.equal(
     toString({value: 'foo'}),
     'foo',
     'should not fail on unrecognised nodes'
-  );
+  )
 
   t.equal(
     toString({
@@ -24,23 +21,19 @@ test('mdast-util-to-string', function (t) {
     }),
     'foo',
     'should prefer `value` over all others'
-  );
+  )
 
   t.equal(
-    toString({
-      value: 'foo',
-      alt: 'bar',
-      title: 'baz'
-    }),
+    toString({value: 'foo', alt: 'bar', title: 'baz'}),
     'foo',
     'should prefer `value` over `alt` or `title`'
-  );
+  )
 
   t.equal(
     toString({alt: 'bar', title: 'baz'}),
     'bar',
     'should prefer `alt` over `title`'
-  );
+  )
 
   t.equal(
     toString({
@@ -49,21 +42,15 @@ test('mdast-util-to-string', function (t) {
     }),
     'baz',
     'should use `title` over `children`'
-  );
+  )
 
   t.equal(
-    toString({
-      children: [{value: 'foo'}, {alt: 'bar'}, {title: 'baz'}]
-    }),
+    toString({children: [{value: 'foo'}, {alt: 'bar'}, {title: 'baz'}]}),
     'foobarbaz',
     'should prefer `children`'
-  );
+  )
 
-  t.equal(
-    toString({}),
-    '',
-    'should fall back on an empty string'
-  );
+  t.equal(toString({}), '', 'should fall back on an empty string')
 
-  t.end();
-});
+  t.end()
+})
