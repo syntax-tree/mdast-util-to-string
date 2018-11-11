@@ -1,6 +1,6 @@
 # mdast-util-to-string [![Build][build-badge]][build] [![Coverage][coverage-badge]][coverage] [![Downloads][downloads-badge]][downloads] [![Chat][chat-badge]][chat]
 
-Get the plain text content of an [MDAST][] node.
+Get the plain text content of [mdast][] nodes.
 
 ## Installation
 
