@@ -2,9 +2,8 @@
 
 module.exports = toString
 
-/* Get the text content of a node.  If the node itself
- * does not expose plain-text fields, `toString` will
- * recursivly try its children. */
+// Get the text content of a node.  If the node itself does not expose
+// plain-text fields, `toString` will recursivly try its children.
 function toString(node) {
   return (
     valueOf(node) ||
@@ -13,8 +12,7 @@ function toString(node) {
   )
 }
 
-/* Get the value of `node`.  Checks, `value`,
- * `alt`, and `title`, in that order. */
+// Get the value of `node`.  Checks, `value`, `alt`, and `title`, in that order.
 function valueOf(node) {
   return (
     (node && node.value ? node.value : node.alt ? node.alt : node.title) || ''
