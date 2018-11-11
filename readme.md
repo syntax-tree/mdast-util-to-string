@@ -1,4 +1,4 @@
-# mdast-util-to-string [![Build Status][build-badge]][build-status] [![Coverage Status][coverage-badge]][coverage-status] [![Chat][chat-badge]][chat]
+# mdast-util-to-string [![Build][build-badge]][build] [![Coverage][coverage-badge]][coverage] [![Downloads][downloads-badge]][downloads] [![Chat][chat-badge]][chat]
 
 Get the plain text content of an [MDAST][] node.
 
@@ -62,15 +62,19 @@ repository, organisation, or community you agree to abide by its terms.
 
 [build-badge]: https://img.shields.io/travis/syntax-tree/mdast-util-to-string.svg
 
-[build-status]: https://travis-ci.org/syntax-tree/mdast-util-to-string
+[build]: https://travis-ci.org/syntax-tree/mdast-util-to-string
 
 [coverage-badge]: https://img.shields.io/codecov/c/github/syntax-tree/mdast-util-to-string.svg
 
-[coverage-status]: https://codecov.io/github/syntax-tree/mdast-util-to-string
+[coverage]: https://codecov.io/github/syntax-tree/mdast-util-to-string
 
-[chat-badge]: https://img.shields.io/gitter/room/wooorm/remark.svg
+[downloads-badge]: https://img.shields.io/npm/dm/mdast-util-to-string.svg
 
-[chat]: https://gitter.im/wooorm/remark
+[downloads]: https://www.npmjs.com/package/mdast-util-to-string
+
+[chat-badge]: https://img.shields.io/badge/join%20the%20community-on%20spectrum-7b16ff.svg
+
+[chat]: https://spectrum.chat/unified/remark
 
 [license]: license
 
