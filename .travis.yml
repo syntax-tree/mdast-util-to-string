@@ -1,7 +1,7 @@
 language: node_js
 node_js:
-- lts/boron
-- node
+  - lts/dubnium
+  - node
 after_success: bash <(curl -s https://codecov.io/bash)
 deploy:
   provider: releases
@@ -9,7 +9,7 @@ deploy:
   api_key:
     secure: CCslBqPGhnzRsNw+/Mx00f3CfOnhwlBzJJM4aRR6H07L1dQoUFQOQrtPhHw3ExqIhtwdV9P+Wl4/6jBSCcb3ch41x53r93KBhaaLQdpH86JsDUhObObgylBwbzh+Cy87fdrtVJh7Fu9Lh02mXBnZqY3nn2Y/EnQ1a26o732nuvpVST1dzlzunmzTeSFT0eG1olhHdsMyvv0Ef3C3jzQJ0aiWYWdqO4veNWALUNNIEnHhR2DA3bCxw/DRkgh+r2GiZr1p/QE1497hbLyYmMQqxnfC7pVzWuosfY3E3+vjHksiMvy+XOpF2/0hwCmMOWwr14diDdTiI5E/gzHasTkhJ6HoxYKF3A+RLuSTZUHsq8wMhcJY8itUFW+cY81s5HPNbAAOW0b6/wHXWO5EutyP/F2H33yx+F/F9yd0V/ikm1DV0f5RZePF7+ll3zc6XEmcOpqqPDmlTiAyRqONOr5zFMe/3TxnpC9rQaYwsKMEKciUqvEKD/S3wm3+hZWRSaaXm07vmiRUoNrx9MyL87YmcK+4OfOF5SqwycT2adilXLMQPqSImGaKalr+toW3rRq/MuMsf9gT2q+GY1QXzbYL4fsMcQtJy/plqVo2sqpqEFtrB7Q5sMXDqEz//swPz9zAg30PZan38WJjjTKue6lEgYNIrEGhUk5PdCnli7g5u8M=
   file:
-    - "mdast-util-to-string.js"
-    - "mdast-util-to-string.min.js"
+    - 'mdast-util-to-string.js'
+    - 'mdast-util-to-string.min.js'
   on:
     tags: true
