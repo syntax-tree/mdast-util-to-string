@@ -1,12 +1,20 @@
-# mdast-util-to-string [![Build][build-badge]][build] [![Coverage][coverage-badge]][coverage] [![Downloads][downloads-badge]][downloads] [![Chat][chat-badge]][chat]
+# mdast-util-to-string
 
-Get the plain text content of [mdast][] nodes.
+[![Build][build-badge]][build]
+[![Coverage][coverage-badge]][coverage]
+[![Downloads][downloads-badge]][downloads]
+[![Size][size-badge]][size]
+[![Sponsors][sponsors-badge]][collective]
+[![Backers][backers-badge]][collective]
+[![Chat][chat-badge]][chat]
 
-## Installation
+[**mdast**][mdast] utility to get the plain text content of a node.
+
+## Install
 
 [npm][]:
 
-```bash
+```sh
 npm install mdast-util-to-string
 ```
 
@@ -28,11 +36,11 @@ console.log(toString(tree)) // => 'Some emphasis, importance, and code.'
 
 ### `toString(node)`
 
-Get the text content of a node.
+Get the text content of a [node][].
 
 The algorithm checks `value` of `node`, then `alt`, and finally `title`.
-If no value is found, the algorithm checks the children of `node` and
-joins them (without spaces or newlines).
+If no value is found, the algorithm checks the children of `node` and joins them
+(without spaces or newlines).
 
 > This is not a markdown to plain-text library.
 > Use [`strip-markdown`][strip-markdown] for that.
@@ -48,11 +56,13 @@ joins them (without spaces or newlines).
 
 ## Contribute
 
-See [`contributing.md` in `syntax-tree/mdast`][contributing] for ways to get
+See [`contributing.md` in `syntax-tree/.github`][contributing] for ways to get
 started.
+See [`support.md`][support] for ways to get help.
 
-This organisation has a [Code of Conduct][coc].  By interacting with this
-repository, organisation, or community you agree to abide by its terms.
+This project has a [Code of Conduct][coc].
+By interacting with this repository, organisation, or community you agree to
+abide by its terms.
 
 ## License
 
@@ -72,20 +82,34 @@ repository, organisation, or community you agree to abide by its terms.
 
 [downloads]: https://www.npmjs.com/package/mdast-util-to-string
 
+[size-badge]: https://img.shields.io/bundlephobia/minzip/mdast-util-to-string.svg
+
+[size]: https://bundlephobia.com/result?p=mdast-util-to-string
+
+[sponsors-badge]: https://opencollective.com/unified/sponsors/badge.svg
+
+[backers-badge]: https://opencollective.com/unified/backers/badge.svg
+
+[collective]: https://opencollective.com/unified
+
 [chat-badge]: https://img.shields.io/badge/join%20the%20community-on%20spectrum-7b16ff.svg
 
-[chat]: https://spectrum.chat/unified/remark
+[chat]: https://spectrum.chat/unified/syntax-tree
+
+[npm]: https://docs.npmjs.com/cli/install
 
 [license]: license
 
 [author]: https://wooorm.com
 
-[npm]: https://docs.npmjs.com/cli/install
+[contributing]: https://github.com/syntax-tree/.github/blob/master/contributing.md
+
+[support]: https://github.com/syntax-tree/.github/blob/master/support.md
+
+[coc]: https://github.com/syntax-tree/.github/blob/master/code-of-conduct.md
 
 [mdast]: https://github.com/syntax-tree/mdast
 
-[strip-markdown]: https://github.com/wooorm/strip-markdown
+[node]: https://github.com/syntax-tree/mdast#nodes
 
-[contributing]: https://github.com/syntax-tree/mdast/blob/master/contributing.md
-
-[coc]: https://github.com/syntax-tree/mdast/blob/master/code-of-conduct.md
+[strip-markdown]: https://github.com/remarkjs/strip-markdown
