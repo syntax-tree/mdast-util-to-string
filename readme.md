@@ -45,6 +45,12 @@ If no value is found, the algorithm checks the children of `node` and joins them
 > This is not a markdown to plain-text library.
 > Use [`strip-markdown`][strip-markdown] for that.
 
+## Security
+
+Use of `mdast-util-to-string` does not involve [**hast**][hast], user content,
+or change the tree, so there are no openings for
+[cross-site scripting (XSS)][xss] attacks.
+
 ## Related
 
 *   [`nlcst-to-string`](https://github.com/syntax-tree/nlcst-to-string)
@@ -113,3 +119,7 @@ abide by its terms.
 [node]: https://github.com/syntax-tree/mdast#nodes
 
 [strip-markdown]: https://github.com/remarkjs/strip-markdown
+
+[xss]: https://en.wikipedia.org/wiki/Cross-site_scripting
+
+[hast]: https://github.com/syntax-tree/hast
