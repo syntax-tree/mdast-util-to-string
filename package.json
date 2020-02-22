@@ -1,16 +1,18 @@
 {
   "name": "mdast-util-to-string",
   "version": "1.0.7",
-  "description": "Utility to get the plain text content of a node",
+  "description": "mdast utility to get the plain text content of a node",
   "license": "MIT",
   "keywords": [
+    "unist",
     "mdast",
+    "mdast-util",
+    "util",
+    "utility",
     "markdown",
     "node",
-    "to",
     "string",
-    "util",
-    "utility"
+    "serialize"
   ],
   "repository": "syntax-tree/mdast-util-to-string",
   "bugs": "https://github.com/syntax-tree/mdast-util-to-string/issues",
