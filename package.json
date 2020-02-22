@@ -1,6 +1,6 @@
 {
   "name": "mdast-util-to-string",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "mdast utility to get the plain text content of a node",
   "license": "MIT",
   "keywords": [
