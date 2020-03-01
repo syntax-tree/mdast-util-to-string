@@ -57,6 +57,8 @@ or change the tree, so there are no openings for
     — Get text content in nlcst
 *   [`hast-util-to-string`](https://github.com/wooorm/rehype-minify/tree/master/packages/hast-util-to-string)
     — Get text content in hast
+*   [`hast-util-to-text`](https://github.com/syntax-tree/hast-util-to-text)
+    — Get text content in hast according to the `innerText` algorithm
 *   [`hast-util-from-string`](https://github.com/wooorm/rehype-minify/tree/master/packages/hast-util-from-string)
     — Set text content in hast
 
