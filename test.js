@@ -4,9 +4,8 @@ var test = require('tape')
 var toString = require('.')
 
 test('mdast-util-to-string', function(t) {
-  t.throws(function() {
-    toString()
-  }, 'should fail without node')
+  t.equal(toString(), '', 'should not fail on a missing node')
+  t.equal(toString(null), '', 'should not fail on `null` missing node')
 
   t.equal(
     toString({value: 'foo'}),
