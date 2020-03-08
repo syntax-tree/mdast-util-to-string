@@ -41,6 +41,7 @@ Get the text content of a [node][].
 The algorithm checks `value` of `node`, then `alt`, and finally `title`.
 If no value is found, the algorithm checks the children of `node` and joins them
 (without spaces or newlines).
+If the given node is in fact a list of nodes, serializes them.
 
 > This is not a markdown to plain-text library.
 > Use [`strip-markdown`][strip-markdown] for that.
