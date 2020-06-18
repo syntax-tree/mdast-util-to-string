@@ -31,15 +31,15 @@
   "devDependencies": {
     "browserify": "^16.0.0",
     "nyc": "^15.0.0",
-    "prettier": "^1.0.0",
-    "remark-cli": "^7.0.0",
-    "remark-preset-wooorm": "^6.0.0",
-    "tape": "^4.4.0",
+    "prettier": "^2.0.0",
+    "remark-cli": "^8.0.0",
+    "remark-preset-wooorm": "^7.0.0",
+    "tape": "^5.0.0",
     "tinyify": "^2.0.0",
-    "xo": "^0.27.0"
+    "xo": "^0.32.0"
   },
   "scripts": {
-    "format": "remark . -qfo && prettier --write \"**/*.js\" && xo --fix",
+    "format": "remark . -qfo && prettier . --write && xo --fix",
     "build-bundle": "browserify . -s mdastUtilToString > mdast-util-to-string.js",
     "build-mangle": "browserify . -s mdastUtilToString -p tinyify > mdast-util-to-string.min.js",
     "build": "npm run build-bundle && npm run build-mangle",
