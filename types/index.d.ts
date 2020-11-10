@@ -3,6 +3,6 @@ import {Node} from 'unist'
 
 declare namespace mdastToString {}
 
-declare function mdastToString(node: Node): string
+declare function mdastToString(node: Node | Node[]): string
 
 export = mdastToString
