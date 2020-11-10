@@ -62,7 +62,8 @@
     "prettier": true,
     "esnext": false,
     "ignore": [
-      "mdast-util-to-string.js"
+      "mdast-util-to-string.js",
+      "types/test.ts"
     ]
   },
   "nyc": {
