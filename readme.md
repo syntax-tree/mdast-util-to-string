@@ -8,7 +8,7 @@
 [![Backers][backers-badge]][collective]
 [![Chat][chat-badge]][chat]
 
-[**mdast**][mdast] utility to get the plain text content of a node.
+**[mdast][]** utility to get the plain text content of a node.
 
 ## Install
 
@@ -36,21 +36,20 @@ console.log(toString(tree)) // => 'Some emphasis, importance, and code.'
 
 ### `toString(node)`
 
-Get the text content of a [node][].
+Get the text content of a [node][] or list of nodes.
 
 The algorithm checks `value` of `node`, then `alt`, and finally `title`.
 If no value is found, the algorithm checks the children of `node` and joins them
 (without spaces or newlines).
-If the given node is in fact a list of nodes, serializes them.
 
 > This is not a markdown to plain-text library.
 > Use [`strip-markdown`][strip-markdown] for that.
 
 ## Security
 
-Use of `mdast-util-to-string` does not involve [**hast**][hast], user content,
-or change the tree, so there are no openings for
-[cross-site scripting (XSS)][xss] attacks.
+Use of `mdast-util-to-string` does not involve **[hast][]**, user content, or
+change the tree, so there are no openings for [cross-site scripting (XSS)][xss]
+attacks.
 
 ## Related
 
