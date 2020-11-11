@@ -42,8 +42,8 @@
   },
   "scripts": {
     "format": "remark . -qfo && prettier . -w --loglevel warn && xo --fix",
-    "build-bundle": "browserify . -s mdastUtilToString > mdast-util-to-string.js",
-    "build-mangle": "browserify . -s mdastUtilToString -p tinyify > mdast-util-to-string.min.js",
+    "build-bundle": "browserify . -s mdastUtilToString -o mdast-util-to-string.js",
+    "build-mangle": "browserify . -s mdastUtilToString -o mdast-util-to-string.min.js -p tinyify",
     "build": "npm run build-bundle && npm run build-mangle",
     "test-api": "node test",
     "test-coverage": "nyc --reporter lcov tape test.js",
