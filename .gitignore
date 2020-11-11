@@ -1,8 +1,8 @@
-.DS_Store
-*.log
 .nyc_output/
 coverage/
 node_modules/
+*.log
+.DS_Store
 mdast-util-to-string.js
 mdast-util-to-string.min.js
 yarn.lock
