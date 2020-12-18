@@ -7,7 +7,7 @@ module.exports = toString
 // and if the given value is an array, serialize the nodes in it.
 function toString(node) {
   return (
-    (node &&
+    (node && node.type !== "html" &&
       (node.value ||
         node.alt ||
         node.title ||
