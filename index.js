@@ -11,6 +11,7 @@ function toString(node) {
       (node.value ||
         node.alt ||
         node.title ||
+        node.url ||
         ('children' in node && all(node.children)) ||
         ('length' in node && all(node)))) ||
     ''
