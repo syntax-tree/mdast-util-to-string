@@ -12,6 +12,9 @@
 
 ## Install
 
+This package is [ESM only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c):
+Node 12+ is needed to use it and it must be `import`ed instead of `require`d.
+
 [npm][]:
 
 ```sh
@@ -21,18 +24,21 @@ npm install mdast-util-to-string
 ## Use
 
 ```js
-var unified = require('unified')
-var parse = require('remark-parse')
-var toString = require('mdast-util-to-string')
+import unified from 'unified'
+import remarkParse from 'remark-parse'
+import {toString} from 'mdast-util-to-string'
 
 var tree = unified()
-  .use(parse)
+  .use(remarkParse)
   .parse('Some _emphasis_, **importance**, and `code`.')
 
 console.log(toString(tree)) // => 'Some emphasis, importance, and code.'
 ```
 
 ## API
+
+This package exports the following identifiers: `toString`.
+There is no default export.
 
 ### `toString(node)`
 

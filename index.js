@@ -1,11 +1,7 @@
-'use strict'
-
-module.exports = toString
-
 // Get the text content of a node.
 // Prefer the node’s plain-text fields, otherwise serialize its children,
 // and if the given value is an array, serialize the nodes in it.
-function toString(node) {
+export function toString(node) {
   return (
     (node &&
       (node.value ||

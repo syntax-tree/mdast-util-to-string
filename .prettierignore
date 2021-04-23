@@ -1,5 +1,2 @@
 coverage/
-*.json
 *.md
-mdast-util-to-string.js
-mdast-util-to-string.min.js
