@@ -14,8 +14,6 @@ export function toString(node) {
       (node.value ||
         // @ts-ignore looks like an image.
         node.alt ||
-        // @ts-ignore looks like an image/link.
-        node.title ||
         // @ts-ignore looks like a parent.
         ('children' in node && all(node.children)) ||
         (Array.isArray(node) && all(node)))) ||

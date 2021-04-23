@@ -26,19 +26,19 @@ test('toString', function (t) {
 
   t.equal(
     toString({title: 'baz', children: [{value: 'qux'}]}),
-    'baz',
-    'should prefer `title` over all others'
+    'qux',
+    'should *not* prefer `title` over all others'
   )
 
   t.equal(
     toString({children: [{value: 'foo'}, {alt: 'bar'}, {title: 'baz'}]}),
-    'foobarbaz',
+    'foobar',
     'should serialize children'
   )
 
   t.equal(
     toString([{value: 'foo'}, {alt: 'bar'}, {title: 'baz'}]),
-    'foobarbaz',
+    'foobar',
     'should serialize a list of nodes'
   )
 
