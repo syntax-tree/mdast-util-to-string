@@ -40,16 +40,20 @@ console.log(toString(tree)) // => 'Some emphasis, importance, and code.'
 This package exports the following identifiers: `toString`.
 There is no default export.
 
-### `toString(node)`
+### `toString(node[, options])`
 
 Get the text content of a [node][] or list of nodes.
 
-The algorithm checks `value` of `node`, then `alt`, and finally `title`.
+The algorithm checks `value` of `node` and then `alt`.
 If no value is found, the algorithm checks the children of `node` and joins them
 (without spaces or newlines).
 
 > This is not a markdown to plain-text library.
 > Use [`strip-markdown`][strip-markdown] for that.
+
+###### `options.includeImageAlt`
+
+Whether to use `alt` (`boolean`, default: `true`)
 
 ## Security
 

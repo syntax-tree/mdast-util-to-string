@@ -31,6 +31,12 @@ test('toString', function (t) {
   )
 
   t.equal(
+    toString({alt: 'bar'}, {includeImageAlt: false}),
+    '',
+    'should *not* include `alt` w/ `includeImageAlt: false`'
+  )
+
+  t.equal(
     toString({children: [{value: 'foo'}, {alt: 'bar'}, {title: 'baz'}]}),
     'foobar',
     'should serialize children'
