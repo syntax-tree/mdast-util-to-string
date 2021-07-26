@@ -1,7 +1,7 @@
 import test from 'tape'
 import {toString} from './index.js'
 
-test('toString', function (t) {
+test('toString', (t) => {
   t.equal(toString(), '', 'should not fail on a missing node')
   t.equal(toString(null), '', 'should not fail on `null` missing node')
 

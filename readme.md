@@ -24,11 +24,11 @@ npm install mdast-util-to-string
 ## Use
 
 ```js
-import unified from 'unified'
+import {unified} from 'unified'
 import remarkParse from 'remark-parse'
 import {toString} from 'mdast-util-to-string'
 
-var tree = unified()
+const tree = unified()
   .use(remarkParse)
   .parse('Some _emphasis_, **importance**, and `code`.')
 

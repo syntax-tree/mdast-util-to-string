@@ -12,8 +12,8 @@
  * @param {Options} [options]
  * @returns {string}
  */
-export function toString(node, options) {
-  var {includeImageAlt = true} = options || {}
+export function toString(node, options = {}) {
+  const {includeImageAlt = true} = options
   return one(node, includeImageAlt)
 }
 
@@ -44,8 +44,8 @@ function one(node, includeImageAlt) {
  */
 function all(values, includeImageAlt) {
   /** @type {Array.<string>} */
-  var result = []
-  var index = -1
+  const result = []
+  let index = -1
 
   while (++index < values.length) {
     result[index] = one(values[index], includeImageAlt)
