@@ -1,4 +1,6 @@
 /**
+ * @typedef {import('mdast').Root|import('mdast').Content} Node
+ *
  * @typedef Options
  * @property {boolean} [includeImageAlt=true]
  */
@@ -8,31 +10,27 @@
  * Prefer the node’s plain-text fields, otherwise serialize its children,
  * and if the given value is an array, serialize the nodes in it.
  *
- * @param {unknown} node
+ * @param {unknown} value
  * @param {Options} [options]
  * @returns {string}
  */
-export function toString(node, options = {}) {
+export function toString(value, options = {}) {
   const {includeImageAlt = true} = options
-  return one(node, includeImageAlt)
+  return one(value, includeImageAlt)
 }
 
 /**
- * @param {unknown} node
+ * @param {unknown} value
  * @param {boolean} includeImageAlt
  * @returns {string}
  */
-function one(node, includeImageAlt) {
+function one(value, includeImageAlt) {
   return (
-    (node &&
-      typeof node === 'object' &&
-      // @ts-ignore looks like a literal.
-      (node.value ||
-        // @ts-ignore looks like an image.
-        (includeImageAlt ? node.alt : '') ||
-        // @ts-ignore looks like a parent.
-        ('children' in node && all(node.children, includeImageAlt)) ||
-        (Array.isArray(node) && all(node, includeImageAlt)))) ||
+    (node(value) &&
+      (('value' in value && value.value) ||
+        (includeImageAlt && 'alt' in value && value.alt) ||
+        ('children' in value && all(value.children, includeImageAlt)))) ||
+    (Array.isArray(value) && all(value, includeImageAlt)) ||
     ''
   )
 }
@@ -52,4 +50,12 @@ function all(values, includeImageAlt) {
   }
 
   return result.join('')
+}
+
+/**
+ * @param {unknown} value
+ * @returns {value is Node}
+ */
+function node(value) {
+  return Boolean(value && typeof value === 'object')
 }

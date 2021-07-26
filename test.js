@@ -2,6 +2,7 @@ import test from 'tape'
 import {toString} from './index.js'
 
 test('toString', (t) => {
+  // @ts-expect-error: runtime.
   t.equal(toString(), '', 'should not fail on a missing node')
   t.equal(toString(null), '', 'should not fail on `null` missing node')
 
