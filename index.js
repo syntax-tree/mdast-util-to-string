@@ -2,12 +2,14 @@
  * @typedef {import('mdast').Root|import('mdast').Content} Node
  *
  * @typedef Options
+ *   Configuration (optional).
  * @property {boolean} [includeImageAlt=true]
+ *   Whether to use `alt` for `image`s.
  */
 
 /**
- * Get the text content of a node.
- * Prefer the node’s plain-text fields, otherwise serialize its children,
+ * Get the text content of a node or list of nodes.
+ * Prefers the node’s plain-text fields, otherwise serializes its children,
  * and if the given value is an array, serialize the nodes in it.
  *
  * @param {unknown} value
@@ -36,12 +38,12 @@ function one(value, includeImageAlt) {
 }
 
 /**
- * @param {Array.<unknown>} values
+ * @param {Array<unknown>} values
  * @param {boolean} includeImageAlt
  * @returns {string}
  */
 function all(values, includeImageAlt) {
-  /** @type {Array.<string>} */
+  /** @type {Array<string>} */
   const result = []
   let index = -1
 
