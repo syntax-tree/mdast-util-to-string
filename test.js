@@ -1,14 +1,19 @@
-import test from 'tape'
+import assert from 'node:assert/strict'
+import test from 'node:test'
 import {toString} from './index.js'
 
-test('toString', (t) => {
+test('toString', () => {
   // @ts-expect-error: runtime.
-  t.equal(toString(), '', 'should not fail on a missing node')
-  t.equal(toString(null), '', 'should not fail on `null` missing node')
+  assert.equal(toString(), '', 'should not fail on a missing node')
+  assert.equal(toString(null), '', 'should not fail on `null` missing node')
 
-  t.equal(toString({value: 'foo'}), 'foo', 'should not fail on nodes w/o type')
+  assert.equal(
+    toString({value: 'foo'}),
+    'foo',
+    'should not fail on nodes w/o type'
+  )
 
-  t.equal(
+  assert.equal(
     toString({
       value: 'foo',
       alt: 'bar',
@@ -19,37 +24,35 @@ test('toString', (t) => {
     'should prefer `value` over all others'
   )
 
-  t.equal(
+  assert.equal(
     toString({alt: 'bar', title: 'baz', children: [{value: 'qux'}]}),
     'bar',
     'should prefer `alt` over all others'
   )
 
-  t.equal(
+  assert.equal(
     toString({title: 'baz', children: [{value: 'qux'}]}),
     'qux',
     'should *not* prefer `title` over all others'
   )
 
-  t.equal(
+  assert.equal(
     toString({alt: 'bar'}, {includeImageAlt: false}),
     '',
     'should *not* include `alt` w/ `includeImageAlt: false`'
   )
 
-  t.equal(
+  assert.equal(
     toString({children: [{value: 'foo'}, {alt: 'bar'}, {title: 'baz'}]}),
     'foobar',
     'should serialize children'
   )
 
-  t.equal(
+  assert.equal(
     toString([{value: 'foo'}, {alt: 'bar'}, {title: 'baz'}]),
     'foobar',
     'should serialize a list of nodes'
   )
 
-  t.equal(toString({}), '', 'should produce an empty string otherwise')
-
-  t.end()
+  assert.equal(toString({}), '', 'should produce an empty string otherwise')
 })
