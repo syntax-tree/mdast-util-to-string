@@ -17,7 +17,8 @@
 *   [Install](#install)
 *   [Use](#use)
 *   [API](#api)
-    *   [`toString(node[, options])`](#tostringnode-options)
+    *   [`toString(value[, options])`](#tostringvalue-options)
+    *   [`Options`](#options)
 *   [Types](#types)
 *   [Compatibility](#compatibility)
 *   [Security](#security)
@@ -43,7 +44,7 @@ Similar packages, [`hast-util-to-string`][hast-util-to-string] and
 ## Install
 
 This package is [ESM only][esm].
-In Node.js (version 12.20+, 14.14+, or 16.0+), install with [npm][]:
+In Node.js (version 14.14+ and 16.0+), install with [npm][]:
 
 ```sh
 npm install mdast-util-to-string
@@ -77,33 +78,46 @@ console.log(toString(tree)) // => 'Some emphasis, importance, and code.'
 
 ## API
 
-This package exports the identifier `toString`.
+This package exports the identifier [`toString`][api-tostring].
 There is no default export.
 
-### `toString(node[, options])`
+### `toString(value[, options])`
 
-Get the text content of a [node][] or list of nodes.
-Prefers the node’s plain-text fields, otherwise serializes its children, and if
-the given value is an array, serialize the nodes in it.
+Get the text content of a node or list of nodes.
 
-##### `options`
+Prefers the node’s plain-text fields, otherwise serializes its children,
+and if the given value is an array, serialize the nodes in it.
 
-Configuration (optional).
+###### Parameters
 
-###### `options.includeImageAlt`
+*   `value` (`unknown`)
+    — thing to serialize, typically [`Node`][node]
+*   `options` ([`Options`][api-options], optional)
+    — configuration
 
-Whether to use `alt` (`boolean`, default: `true`).
+###### Returns
+
+Serialized `value` (`string`).
+
+### `Options`
+
+Configuration (TypeScript type).
+
+###### Fields
+
+*   `includeImageAlt` (`boolean`, default: `true`)
+    — whether to use `alt` for `image`s
 
 ## Types
 
 This package is fully typed with [TypeScript][].
-It exports the type `Options`.
+It exports the additional type [`Options`][api-options].
 
 ## Compatibility
 
 Projects maintained by the unified collective are compatible with all maintained
 versions of Node.js.
-As of now, that is Node.js 12.20+, 14.14+, and 16.0+.
+As of now, that is Node.js 14.14+ and 16.0+.
 Our projects sometimes work with older versions, but this is not guaranteed.
 
 ## Security
@@ -194,3 +208,7 @@ abide by its terms.
 [node]: https://github.com/syntax-tree/mdast#nodes
 
 [xss]: https://en.wikipedia.org/wiki/Cross-site_scripting
+
+[api-tostring]: #tostringvalue-options
+
+[api-options]: #options
