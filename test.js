@@ -1,8 +1,15 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
 import {toString} from './index.js'
+import * as mod from './index.js'
 
 test('toString', () => {
+  assert.deepEqual(
+    Object.keys(mod).sort(),
+    ['toString'],
+    'should expose the public api'
+  )
+
   // @ts-expect-error: runtime.
   assert.equal(toString(), '', 'should not fail on a missing node')
   assert.equal(toString(null), '', 'should not fail on `null` missing node')
