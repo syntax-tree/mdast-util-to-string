@@ -107,6 +107,8 @@ Configuration (TypeScript type).
 
 *   `includeImageAlt` (`boolean`, default: `true`)
     — whether to use `alt` for `image`s
+*   `includeHtml` (`boolean`, default: `true`)
+    — whether to use `value` of HTML
 
 ## Types
 

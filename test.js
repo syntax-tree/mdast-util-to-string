@@ -50,6 +50,12 @@ test('toString', () => {
   )
 
   assert.equal(
+    toString({type: 'html', value: 'a'}, {includeHtml: false}),
+    '',
+    'should *not* include `html` w/ `includeHtml: false`'
+  )
+
+  assert.equal(
     toString({children: [{value: 'foo'}, {alt: 'bar'}, {title: 'baz'}]}),
     'foobar',
     'should serialize children'
