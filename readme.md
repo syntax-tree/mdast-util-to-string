@@ -44,7 +44,7 @@ Similar packages, [`hast-util-to-string`][hast-util-to-string] and
 ## Install
 
 This package is [ESM only][esm].
-In Node.js (version 14.14+ and 16.0+), install with [npm][]:
+In Node.js (version 16+), install with [npm][]:
 
 ```sh
 npm install mdast-util-to-string
@@ -67,7 +67,6 @@ In browsers with [`esm.sh`][esmsh]:
 ## Use
 
 ```js
-import {unified} from 'unified'
 import {fromMarkdown} from 'mdast-util-from-markdown'
 import {toString} from 'mdast-util-to-string'
 
@@ -78,7 +77,7 @@ console.log(toString(tree)) // => 'Some emphasis, importance, and code.'
 
 ## API
 
-This package exports the identifier [`toString`][api-tostring].
+This package exports the identifier [`toString`][api-to-string].
 There is no default export.
 
 ### `toString(value[, options])`
@@ -117,10 +116,13 @@ It exports the additional type [`Options`][api-options].
 
 ## Compatibility
 
-Projects maintained by the unified collective are compatible with all maintained
+Projects maintained by the unified collective are compatible with maintained
 versions of Node.js.
-As of now, that is Node.js 14.14+ and 16.0+.
-Our projects sometimes work with older versions, but this is not guaranteed.
+
+When we cut a new major release, we drop support for unmaintained versions of
+Node.
+This means we try to keep the current release line, `mdast-util-to-string@^3`,
+compatible with Node.js 12.
 
 ## Security
 
@@ -163,9 +165,9 @@ abide by its terms.
 
 [downloads]: https://www.npmjs.com/package/mdast-util-to-string
 
-[size-badge]: https://img.shields.io/bundlephobia/minzip/mdast-util-to-string.svg
+[size-badge]: https://img.shields.io/badge/dynamic/json?label=minzipped%20size&query=$.size.compressedSize&url=https://deno.bundlejs.com/?q=mdast-util-to-string
 
-[size]: https://bundlephobia.com/result?p=mdast-util-to-string
+[size]: https://bundlejs.com/?q=mdast-util-to-string
 
 [sponsors-badge]: https://opencollective.com/unified/sponsors/badge.svg
 
@@ -211,6 +213,6 @@ abide by its terms.
 
 [xss]: https://en.wikipedia.org/wiki/Cross-site_scripting
 
-[api-tostring]: #tostringvalue-options
+[api-to-string]: #tostringvalue-options
 
 [api-options]: #options
