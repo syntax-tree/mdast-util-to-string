@@ -1,71 +1,84 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
 import {toString} from './index.js'
-import * as mod from './index.js'
 
-test('toString', () => {
-  assert.deepEqual(
-    Object.keys(mod).sort(),
-    ['toString'],
-    'should expose the public api'
+test('toString', async function (t) {
+  await t.test('should expose the public api', async function () {
+    assert.deepEqual(Object.keys(await import('./index.js')).sort(), [
+      'toString'
+    ])
+  })
+
+  await t.test('should not fail on a missing node', async function () {
+    assert.equal(toString(), '')
+  })
+
+  await t.test('should not fail on `null` missing node', async function () {
+    assert.equal(toString(null), '')
+  })
+
+  await t.test('should not fail on nodes w/o type', async function () {
+    assert.equal(toString({value: 'foo'}), 'foo')
+  })
+
+  await t.test('should prefer `value` over all others', async function () {
+    assert.equal(
+      toString({
+        value: 'foo',
+        alt: 'bar',
+        title: 'baz',
+        children: [{value: 'qux'}]
+      }),
+      'foo'
+    )
+  })
+
+  await t.test('should prefer `alt` over all others', async function () {
+    assert.equal(
+      toString({alt: 'bar', title: 'baz', children: [{value: 'qux'}]}),
+      'bar'
+    )
+  })
+
+  await t.test(
+    'should *not* prefer `title` over all others',
+    async function () {
+      assert.equal(toString({title: 'baz', children: [{value: 'qux'}]}), 'qux')
+    }
   )
 
-  // @ts-expect-error: runtime.
-  assert.equal(toString(), '', 'should not fail on a missing node')
-  assert.equal(toString(null), '', 'should not fail on `null` missing node')
-
-  assert.equal(
-    toString({value: 'foo'}),
-    'foo',
-    'should not fail on nodes w/o type'
+  await t.test(
+    'should *not* include `alt` w/ `includeImageAlt: false`',
+    async function () {
+      assert.equal(toString({alt: 'bar'}, {includeImageAlt: false}), '')
+    }
   )
 
-  assert.equal(
-    toString({
-      value: 'foo',
-      alt: 'bar',
-      title: 'baz',
-      children: [{value: 'qux'}]
-    }),
-    'foo',
-    'should prefer `value` over all others'
+  await t.test(
+    'should *not* include `html` w/ `includeHtml: false`',
+    async function () {
+      assert.equal(
+        toString({type: 'html', value: 'a'}, {includeHtml: false}),
+        ''
+      )
+    }
   )
 
-  assert.equal(
-    toString({alt: 'bar', title: 'baz', children: [{value: 'qux'}]}),
-    'bar',
-    'should prefer `alt` over all others'
-  )
+  await t.test('should serialize children', async function () {
+    assert.equal(
+      toString({children: [{value: 'foo'}, {alt: 'bar'}, {title: 'baz'}]}),
+      'foobar'
+    )
+  })
 
-  assert.equal(
-    toString({title: 'baz', children: [{value: 'qux'}]}),
-    'qux',
-    'should *not* prefer `title` over all others'
-  )
+  await t.test('should serialize a list of nodes', async function () {
+    assert.equal(
+      toString([{value: 'foo'}, {alt: 'bar'}, {title: 'baz'}]),
+      'foobar'
+    )
+  })
 
-  assert.equal(
-    toString({alt: 'bar'}, {includeImageAlt: false}),
-    '',
-    'should *not* include `alt` w/ `includeImageAlt: false`'
-  )
-
-  assert.equal(
-    toString({type: 'html', value: 'a'}, {includeHtml: false}),
-    '',
-    'should *not* include `html` w/ `includeHtml: false`'
-  )
-
-  assert.equal(
-    toString({children: [{value: 'foo'}, {alt: 'bar'}, {title: 'baz'}]}),
-    'foobar',
-    'should serialize children'
-  )
-
-  assert.equal(
-    toString([{value: 'foo'}, {alt: 'bar'}, {title: 'baz'}]),
-    'foobar',
-    'should serialize a list of nodes'
-  )
-
-  assert.equal(toString({}), '', 'should produce an empty string otherwise')
+  await t.test('should produce an empty string otherwise', async function () {
+    assert.equal(toString({}), '')
+  })
 })
