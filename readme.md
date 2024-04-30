@@ -12,19 +12,19 @@
 
 ## Contents
 
-*   [What is this?](#what-is-this)
-*   [When should I use this?](#when-should-i-use-this)
-*   [Install](#install)
-*   [Use](#use)
-*   [API](#api)
-    *   [`toString(value[, options])`](#tostringvalue-options)
-    *   [`Options`](#options)
-*   [Types](#types)
-*   [Compatibility](#compatibility)
-*   [Security](#security)
-*   [Related](#related)
-*   [Contribute](#contribute)
-*   [License](#license)
+* [What is this?](#what-is-this)
+* [When should I use this?](#when-should-i-use-this)
+* [Install](#install)
+* [Use](#use)
+* [API](#api)
+  * [`toString(value[, options])`](#tostringvalue-options)
+  * [`Options`](#options)
+* [Types](#types)
+* [Compatibility](#compatibility)
+* [Security](#security)
+* [Related](#related)
+* [Contribute](#contribute)
+* [License](#license)
 
 ## What is this?
 
@@ -89,10 +89,10 @@ and if the given value is an array, serialize the nodes in it.
 
 ###### Parameters
 
-*   `value` (`unknown`)
-    — thing to serialize, typically [`Node`][node]
-*   `options` ([`Options`][api-options], optional)
-    — configuration
+* `value` (`unknown`)
+  — thing to serialize, typically [`Node`][node]
+* `options` ([`Options`][api-options], optional)
+  — configuration
 
 ###### Returns
 
@@ -104,10 +104,10 @@ Configuration (TypeScript type).
 
 ###### Fields
 
-*   `includeImageAlt` (`boolean`, default: `true`)
-    — whether to use `alt` for `image`s
-*   `includeHtml` (`boolean`, default: `true`)
-    — whether to use `value` of HTML
+* `includeImageAlt` (`boolean`, default: `true`)
+  — whether to use `alt` for `image`s
+* `includeHtml` (`boolean`, default: `true`)
+  — whether to use `value` of HTML
 
 ## Types
 
@@ -132,10 +132,10 @@ attacks.
 
 ## Related
 
-*   [`hast-util-to-string`](https://github.com/wooorm/rehype-minify/tree/main/packages/hast-util-to-string)
-    — get text content in hast
-*   [`hast-util-to-text`](https://github.com/syntax-tree/hast-util-to-text)
-    — get text content in hast according to the `innerText` algorithm
+* [`hast-util-to-string`](https://github.com/wooorm/rehype-minify/tree/main/packages/hast-util-to-string)
+  — get text content in hast
+* [`hast-util-to-text`](https://github.com/syntax-tree/hast-util-to-text)
+  — get text content in hast according to the `innerText` algorithm
 
 ## Contribute
 
